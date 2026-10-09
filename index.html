@@ -1,168 +1,287 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My JavaScript Workspace</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-
+    <title>My JavaScript Workspace</title>
 </head>
 
-<body>
+<body class="bg-[#fbfbfa] text-[#37352f]">
 
-<header>
-    📚 My JavaScript Learning Workspace
-</header>
+    <!-- Top Bar -->
+    <header class="sticky top-0 z-10 border-b border-[#e9e9e7] bg-white/90 backdrop-blur">
+        <div class="flex h-14 items-center px-6">
+            <div class="flex items-center gap-3">
+                <span class="text-xl">📚</span>
+                <span class="font-semibold text-[15px]">
+                    My JavaScript Learning Workspace
+                </span>
+            </div>
+        </div>
+    </header>
 
-<div class="app">
 
-<aside>
-    <h3>JavaScript</h3>
+    <!-- Main Application -->
+    <div class="flex min-h-[calc(100vh-56px)]">
 
-    <button class="topic active" onclick="selectTopic('Code Structure')">
-        2.2 Code Structure
-    </button>
 
-    <button class="topic" onclick="selectTopic('Variables')">
-        2.3 Variables
-    </button>
+        <!-- Sidebar -->
+        <aside class="hidden w-64 shrink-0 border-r border-[#e9e9e7] bg-[#f7f7f5] p-4 md:block">
 
-    <button class="topic" onclick="selectTopic('Data Types')">
-        2.4 Data Types
-    </button>
+            <div class="mb-4 px-2">
+                <p class="text-xs font-semibold uppercase tracking-wide text-[#787774]">
+                    JavaScript
+                </p>
+            </div>
 
-    <button class="topic" onclick="selectTopic('Operators')">
-        2.5 Operators
-    </button>
-</aside>
+            <nav class="space-y-1">
 
-<main>
+                <button
+                    class="topic active flex w-full items-center rounded-md px-3 py-2 text-left text-sm transition hover:bg-[#e9e9e7] bg-[#e9e9e7] font-medium"
+                    onclick="selectTopic('Code Structure', this)">
+                    <span class="mr-2">📄</span>
+                    2.2 Code Structure
+                </button>
 
-<div class="card">
+                <button
+                    class="topic flex w-full items-center rounded-md px-3 py-2 text-left text-sm transition hover:bg-[#e9e9e7]"
+                    onclick="selectTopic('Variables', this)">
+                    <span class="mr-2">📦</span>
+                    2.3 Variables
+                </button>
 
-    <h1 id="title">Code Structure</h1>
+                <button
+                    class="topic flex w-full items-center rounded-md px-3 py-2 text-left text-sm transition hover:bg-[#e9e9e7]"
+                    onclick="selectTopic('Data Types', this)">
+                    <span class="mr-2">🔤</span>
+                    2.4 Data Types
+                </button>
 
-    <p id="description">
-        Learn how JavaScript statements are written and executed.
-    </p>
+                <button
+                    class="topic flex w-full items-center rounded-md px-3 py-2 text-left text-sm transition hover:bg-[#e9e9e7]"
+                    onclick="selectTopic('Operators', this)">
+                    <span class="mr-2">➕</span>
+                    2.5 Operators
+                </button>
 
-    <p id="status">📖 Currently Learning</p>
+            </nav>
 
-</div>
+        </aside>
 
-<div class="card">
 
-    <h2>🧠 Mentor Note</h2>
+        <!-- Content Area -->
+        <main class="w-full max-w-4xl px-5 py-8 md:px-10 lg:px-16">
 
-    <p>
-        In an assignment, JavaScript evaluates the right side first,
-        then puts the result into the variable on the left.
-    </p>
 
-    <p>
-        Example:
-        <strong>let score = 10 + 5;</strong>
-    </p>
+            <!-- Page Header -->
+            <section class="mb-8">
 
-</div>
+                <div class="mb-3 flex items-center gap-2 text-sm text-[#787774]">
+                    <span>JavaScript</span>
+                    <span>›</span>
+                    <span>Learning</span>
+                </div>
 
-<div class="card">
+                <h1
+                    id="title"
+                    class="mb-3 text-3xl font-bold tracking-tight text-[#37352f] md:text-4xl">
+                    Code Structure
+                </h1>
 
-    <h2>💻 Practice</h2>
+                <p
+                    id="description"
+                    class="max-w-2xl text-base leading-7 text-[#787774]">
+                    Learn how JavaScript statements are written and executed.
+                </p>
 
-    <textarea id="code">let score = 10 + 5;
+                <div
+                    id="status"
+                    class="mt-4 inline-flex items-center rounded-md bg-[#f1f1ef] px-3 py-1.5 text-xs font-medium text-[#787774]">
+                    📖 Currently Learning
+                </div>
+
+            </section>
+
+
+            <!-- Mentor Note -->
+            <section class="mb-6 rounded-lg border border-[#e9e9e7] bg-white p-6 shadow-sm">
+
+                <div class="mb-4 flex items-center gap-2">
+                    <span class="text-lg">🧠</span>
+                    <h2 class="text-lg font-semibold">
+                        Mentor Note
+                    </h2>
+                </div>
+
+                <div class="space-y-3 text-sm leading-7 text-[#5f5e5b]">
+
+                    <p>
+                        In an assignment, JavaScript evaluates the right side first,
+                        then puts the result into the variable on the left.
+                    </p>
+
+                    <p>
+                        Example:
+                        <strong class="rounded bg-[#f1f1ef] px-1.5 py-0.5 font-mono text-sm text-[#37352f]">
+                            let score = 10 + 5;
+                        </strong>
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Practice -->
+            <section class="mb-6 rounded-lg border border-[#e9e9e7] bg-white p-6 shadow-sm">
+
+                <div class="mb-4 flex items-center gap-2">
+                    <span class="text-lg">💻</span>
+                    <h2 class="text-lg font-semibold">
+                        Practice
+                    </h2>
+                </div>
+
+                <textarea
+                    id="code"
+                    class="mb-4 min-h-40 w-full resize-y rounded-md border border-[#d9d9d7] bg-[#f7f7f5] p-4 font-mono text-sm leading-6 outline-none transition focus:border-[#a8a8a5] focus:ring-2 focus:ring-[#e9e9e7]"
+                >let score = 10 + 5;
 console.log(score);</textarea>
 
-    <button class="action" onclick="runCode()">
-        ▶ Run Code
-    </button>
+                <button
+                    class="rounded-md bg-[#37352f] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#55534e]"
+                    onclick="runCode()">
+                    ▶ Run Code
+                </button>
 
-    <div id="output">Output will appear here...</div>
+                <div
+                    id="output"
+                    class="mt-4 min-h-12 rounded-md border border-[#e9e9e7] bg-[#f7f7f5] p-4 font-mono text-sm text-[#5f5e5b]">
+                    Output will appear here...
+                </div>
 
-</div>
+            </section>
 
-<div class="card">
 
-    <h2>📝 My Notes</h2>
+            <!-- Notes -->
+            <section class="mb-6 rounded-lg border border-[#e9e9e7] bg-white p-6 shadow-sm">
 
-    <textarea id="notes"
-        placeholder="Write what you learned..."></textarea>
+                <div class="mb-4 flex items-center gap-2">
+                    <span class="text-lg">📝</span>
+                    <h2 class="text-lg font-semibold">
+                        My Notes
+                    </h2>
+                </div>
 
-    <button class="action" onclick="saveNotes()">
-        💾 Save Notes
-    </button>
+                <textarea
+                    id="notes"
+                    placeholder="Write what you learned..."
+                    class="mb-4 min-h-40 w-full resize-y rounded-md border border-[#d9d9d7] bg-white p-4 text-sm leading-6 outline-none transition placeholder:text-[#a9a8a4] focus:border-[#a8a8a5] focus:ring-2 focus:ring-[#e9e9e7]"
+                ></textarea>
 
-</div>
+                <button
+                    class="rounded-md border border-[#d9d9d7] bg-white px-4 py-2 text-sm font-medium transition hover:bg-[#f7f7f5]"
+                    onclick="saveNotes()">
+                    💾 Save Notes
+                </button>
 
-<div class="card">
+            </section>
 
-    <h2>📋 Mentor Checkpoint</h2>
 
-    <p>
-        Create a small summary to bring your progress back
-        to our JavaScript mentorship.
-    </p>
+            <!-- Mentor Checkpoint -->
+            <section class="mb-10 rounded-lg border border-[#e9e9e7] bg-white p-6 shadow-sm">
 
-    <button class="action" onclick="checkpoint()">
-        Generate Checkpoint
-    </button>
+                <div class="mb-4 flex items-center gap-2">
+                    <span class="text-lg">📋</span>
+                    <h2 class="text-lg font-semibold">
+                        Mentor Checkpoint
+                    </h2>
+                </div>
 
-    <textarea id="checkpoint"
-        readonly
-        placeholder="Your checkpoint will appear here..."></textarea>
+                <p class="mb-4 text-sm leading-7 text-[#787774]">
+                    Create a small summary to bring your progress back
+                    to our JavaScript mentorship.
+                </p>
 
-</div>
+                <button
+                    class="mb-4 rounded-md bg-[#37352f] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#55534e]"
+                    onclick="checkpoint()">
+                    Generate Checkpoint
+                </button>
 
-</main>
-</div>
+                <textarea
+                    id="checkpoint"
+                    readonly
+                    placeholder="Your checkpoint will appear here..."
+                    class="min-h-56 w-full resize-y rounded-md border border-[#d9d9d7] bg-[#f7f7f5] p-4 font-mono text-sm leading-6 outline-none"
+                ></textarea>
 
-<script>
+            </section>
 
-let currentTopic = "Code Structure";
 
-function runCode() {
+        </main>
 
-    const output = document.getElementById("output");
+    </div>
 
-    const oldLog = console.log;
-    let result = "";
 
-    console.log = function(value) {
-        result += value + "\n";
-    };
+    <!-- JavaScript -->
+    <script>
 
-    try {
-        new Function(document.getElementById("code").value)();
+        let currentTopic = "Code Structure";
 
-        output.textContent =
-            result || "Code executed successfully.";
 
-    } catch (error) {
-        output.textContent = "Error: " + error.message;
-    }
+        function runCode() {
 
-    console.log = oldLog;
-}
+            const output = document.getElementById("output");
 
-function saveNotes() {
+            const oldLog = console.log;
+            let result = "";
 
-    localStorage.setItem(
-        "jsNotes",
-        document.getElementById("notes").value
-    );
+            console.log = function(value) {
+                result += value + "\n";
+            };
 
-    alert("Notes saved.");
-}
+            try {
 
-function checkpoint() {
+                new Function(
+                    document.getElementById("code").value
+                )();
 
-    const notes =
-        document.getElementById("notes").value;
+                output.textContent =
+                    result || "Code executed successfully.";
 
-    document.getElementById("checkpoint").value =
+            } catch (error) {
+
+                output.textContent =
+                    "Error: " + error.message;
+
+            }
+
+            console.log = oldLog;
+        }
+
+
+        function saveNotes() {
+
+            localStorage.setItem(
+                "jsNotes",
+                document.getElementById("notes").value
+            );
+
+            alert("Notes saved.");
+        }
+
+
+        function checkpoint() {
+
+            const notes =
+                document.getElementById("notes").value;
+
+            document.getElementById("checkpoint").value =
 `JavaScript Learning Checkpoint
 
 Current Topic: ${currentTopic}
@@ -174,23 +293,43 @@ Please continue my JavaScript mentorship
 from this point using javascript.info as
 the textbook.`;
 
-}
+        }
 
-function selectTopic(topic) {
 
-    currentTopic = topic;
+        function selectTopic(topic, button) {
 
-    document.getElementById("title").textContent = topic;
+            currentTopic = topic;
 
-    document.getElementById("status").textContent =
-        "📖 Currently Learning";
+            document.getElementById("title").textContent =
+                topic;
 
-}
+            document.getElementById("status").textContent =
+                "📖 Currently Learning";
 
-document.getElementById("notes").value =
-    localStorage.getItem("jsNotes") || "";
 
-</script>
+            // Update sidebar active state
+            document.querySelectorAll(".topic").forEach(item => {
+
+                item.classList.remove(
+                    "bg-[#e9e9e7]",
+                    "font-medium"
+                );
+
+            });
+
+            button.classList.add(
+                "bg-[#e9e9e7]",
+                "font-medium"
+            );
+
+        }
+
+
+        // Restore saved notes
+        document.getElementById("notes").value =
+            localStorage.getItem("jsNotes") || "";
+
+    </script>
 
 </body>
 </html>
